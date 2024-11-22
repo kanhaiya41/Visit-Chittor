@@ -1,0 +1,1580 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.nav {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  padding: 1vh 6vh;
+  font-size: large;
+  font-weight: 600;
+  list-style: none;
+}
+
+.nav li {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nav li:hover {
+  color: blue;
+}
+
+/* home  */
+.slider {
+  height: 94vh;
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  filter: blur(3px);
+}
+
+.slides {
+  height: 100%;
+  width: 300%;
+  display: flex;
+  transition: margin-left .5s;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.home {
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  padding: 28vh 10vw;
+  display: flex;
+  flex-direction: column;
+  gap: .5vh;
+}
+
+.content h1 {
+  color: aliceblue;
+}
+
+.content h2 {
+  color: navy;
+  padding-left: .2vw;
+}
+
+.content h3 {
+  color: gold;
+  padding-left: .3vw;
+}
+
+.content button {
+  padding: 1vw;
+  width: 30%;
+  border-radius: 5px;
+  border: none;
+  background: greenyellow;
+  font-weight: bold;
+  color: blue;
+  margin-top: 5vh;
+  margin-left: .3vw;
+  cursor: pointer;
+}
+
+/* end home  */
+
+/* Contact Us  */
+
+.contact {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.CI {
+  margin-top: 2vw;
+  font-size: 2vw;
+  font-weight: 1000;
+  text-align: center;
+}
+
+.CIBox {
+  font-size: 1vw;
+  height: 19vw;
+  width: 19vw;
+  background-color: #8b4513;
+  border-radius: 12px;
+  color: #fff;
+  margin-left: 2vw;
+  font-weight: bold;
+  padding: 3vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.call {
+  height: 3vw;
+  width: 3vw;
+  border-radius: 50%;
+}
+
+.CIFLEXBOX {
+  display: flex;
+  gap: 6vw;
+  padding-left: 4vw;
+  flex-wrap: wrap;
+}
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  height: 10vw;
+  overflow: hidden;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slider-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: zoom 20s infinite ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  20%,
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text h2 {
+  color: white;
+  font-size: 4vw;
+  text-align: center;
+}
+
+.slider-image:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slider-image:nth-child(2) {
+  animation-delay: 6.5s;
+}
+
+.slider-image:nth-child(3) {
+  animation-delay: 13s;
+}
+
+/* end Contact Us  */
+
+/* tour  */
+.visitplace {
+  display: flex;
+  height: 40vh;
+  width: 100vw;
+  padding: 2vw;
+  background: aquamarine;
+  gap: 5vw;
+}
+
+.data {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+}
+
+.data button {
+  width: 10%;
+  height: 10%;
+  padding: .15vw;
+  cursor: pointer;
+}
+
+.img {
+  width: 30%;
+  height: 100%;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+}
+
+.placeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* end tour  */
+
+/* about us  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem;
+  background-color: #8b4513;
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+.about-content {
+  max-width: 800px;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.about-content h2 {
+  font-size: 1.8rem;
+  margin: 1rem 0 0.5rem;
+  color: #8b4513;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.about-content ul {
+  list-style-type: disc;
+  margin: 1rem 0 1rem 2rem;
+}
+
+#staff {
+  cursor: pointer;
+}
+
+#staff:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+#staffuse {
+  display: none;
+  top: 0%;
+  left: 31%;
+  position: absolute;
+}
+
+.line {
+  background: #000;
+  width: 15px;
+  height: 80vh;
+  margin-left: 80%;
+}
+
+.staffuse {
+  width: 45vw;
+  padding: 30px;
+  padding-left: 25px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.staffuse div {
+  display: flex;
+  gap: 10%;
+  justify-content: center;
+}
+
+.staffuse h2 {
+  text-align: center;
+  color: yellowgreen;
+}
+
+.staffuse h4:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+/* Animation for Falling Effect */
+@keyframes dropDown {
+  0% {
+    transform: translate(0%, -500%);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translate(0%, 30%);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translate(0%, 20%);
+  }
+
+  100% {
+    transform: translate(0%, 0);
+  }
+}
+
+#staffuse.animate {
+  animation: dropDown 1s ease-out;
+  display: block;
+}
+
+#Admin {
+  display: none;
+  top: 30%;
+  left: 35%;
+  position: fixed;
+
+}
+
+#Admin.adminanimate {
+  animation: dropDown 1s ease-out;
+  display: block;
+}
+
+#Manager {
+  display: none;
+  top: 30%;
+  left: 35%;
+  position: fixed;
+
+}
+
+#Manager.adminanimate {
+  animation: dropDown 1s ease-out;
+  display: block;
+}
+
+#Guide {
+  display: none;
+  top: 30%;
+  left: 35%;
+  position: fixed;
+
+}
+
+#Guide.adminanimate {
+  animation: dropDown 1s ease-out;
+  display: block;
+}
+
+@keyframes dropDown {
+  0% {
+    transform: translate(0%, -500%);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translate(0%, 30%);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translate(0%, 20%);
+  }
+
+  100% {
+    transform: translate(0%, 0);
+  }
+}
+
+/* end about us  */
+
+/* place page  */
+
+.placemain {
+  position: relative;
+}
+
+.guide {
+  position: fixed;
+  /* background: rosybrown; */
+  display: flex;
+  padding: 3vh 2vw;
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 1px 1px 1px 1px rgb(117, 116, 116);
+  background: #ffffff;
+  align-items: center;
+}
+
+.guide button {
+  padding: 2vh 1vw;
+  border-radius: 50px;
+  background: pink;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.guide button:hover {
+  background: rgb(244, 183, 193);
+}
+
+.guide span {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.guide p {
+  font-weight: 600;
+}
+
+.placedatadiv {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 15vh 15vw 2vh;
+  gap: 2vh;
+  background: #fff;
+}
+
+.placedatadiv img {
+  width: 100%;
+  max-width: 70vw;
+  border-radius: 8px;
+}
+
+.placedatadiv h1 {
+  font-weight: 800;
+  font-size: 40px;
+}
+
+
+/* end place page  */
+
+/* guideBooking */
+.guidebooking {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-in-box {
+  width: 30vw;
+  padding: 20px;
+  padding-left: 25px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  /* display: none; */
+}
+
+.sign-in-box h2 {
+  margin-bottom: 20px;
+}
+
+.sign-in-box label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.sign-in-box input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.sign-in-box button {
+  padding: 10px 20px;
+  font-weight: 600;
+  width: 100%;
+  background-color: coral;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-signin {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: red;
+}
+
+.fillbl {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+
+
+/* end guideBooking  */
+
+/* admin panel */
+
+.adminpanel {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  margin-top: 5vh;
+  /* justify-content: center; */
+}
+
+
+.avstock {
+  margin-left: 15%;
+}
+
+.tabled {
+  width: 100vw;
+  padding-left: 14%;
+  text-align: center;
+  height: 30vh;
+  overflow-y: scroll;
+  font-weight: lighter;
+
+}
+
+.sotable {
+  width: 80%;
+  box-shadow: rgb(216, 206, 206) 0.1vh 0.5vh;
+  /* height: 30vh; */
+
+}
+
+.table-data,
+.table-head {
+  padding: 1.5%;
+  border-bottom: #e6dfdf solid 0.1vh;
+
+}
+
+.table-action {
+  display: flex;
+  justify-content: center;
+  padding: 50% 0;
+  gap: 20%;
+  border-bottom: #e6dfdf solid 0.1vh;
+
+}
+
+.table-row:hover {
+  background: rgb(247, 239, 239);
+}
+
+.table-th {
+  background-color: coral;
+  color: white;
+}
+
+
+.allitems {
+  /* margin-left: 15vw; */
+  margin-top: 5vh;
+}
+
+.bcbtn {
+  padding: 10px 25px;
+  border-radius: 12px;
+  background: silver;
+  border: none;
+}
+
+/* end admin panel */
+
+/* adminpanel/manager  */
+
+.managerinfo {
+  background: aquamarine;
+  display: flex;
+  flex-direction: column;
+  /* height: 10vh; */
+  position: fixed;
+  padding: 1vw;
+  align-items: center;
+  border-radius: 12px;
+  margin-top: 1vh;
+  right: 0;
+  margin-right: .51vw;
+}
+
+.managerinfo img {
+  height: 10vw;
+  width: 10vw;
+  border-radius: 50%;
+}
+
+.managerinfo .other {
+  text-align: left;
+}
+
+/* end adminpanel/manager  */
+
+/* managerpanel */
+
+.mainmangerpanel .profile {
+  right: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vw;
+}
+
+.mainmangerpanel .profile img {
+  height: 8vw;
+  width: 8vw;
+  border-radius: 50%;
+}
+
+.mainmangerpanel .branchwork {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3vh;
+}
+
+/* end manager panel */
+
+/* managerpanel/employee  */
+
+.workinfo .asworkbtn {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.aswork {
+  background: #ddd;
+  padding: 1vw;
+  border-radius: 12px;
+  font-weight: 600;
+  color: navy;
+  border: none;
+}
+
+/* end managerpanel/emplyee */
+
+/* workassign */
+
+.asgn {
+  padding: 1vw 2vw;
+  background: #ddd;
+  font-weight: 600;
+  border-radius: 12px;
+  margin-top: 5vh;
+  margin-right: 12vw;
+  border: none;
+  color: navy;
+}
+
+/* end work assign  */
+
+/* guide */
+
+#complete {
+  color: green;
+  cursor: pointer;
+}
+
+#complete:hover {
+  text-decoration: underline;
+}
+
+/* end guide  */
+
+/* completeWork  */
+
+.completedwork {
+  background: rosybrown;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 1vw;
+  margin: 3vw;
+  left: 30%;
+  top: 10%;
+}
+
+.completedwork input {
+  width: 30vw;
+  height: 5vh;
+}
+
+.completedwork button {
+  padding: 1vh;
+}
+
+/* end CompleteWork */
+
+@media (max-width: 600px) {
+  .nav {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    padding: 1vh 1vh;
+    font-size: large;
+    font-weight: 600;
+    list-style: none;
+  }
+  
+  .nav li {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .nav li:hover {
+    color: blue;
+  }
+  
+  /* home  */
+  .slider {
+    height: 94vh;
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+    filter: blur(3px);
+  }
+  
+  .slides {
+    height: 100%;
+    width: 300%;
+    display: flex;
+    transition: margin-left .5s;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .home {
+    position: relative;
+  }
+  
+  .content {
+    position: absolute;
+    padding: 28vh 10vw;
+    display: flex;
+    flex-direction: column;
+    gap: .5vh;
+  }
+  
+  .content h1 {
+    color: aliceblue;
+  }
+  
+  .content h2 {
+    color: navy;
+    padding-left: .2vw;
+  }
+  
+  .content h3 {
+    color: gold;
+    padding-left: .3vw;
+  }
+  
+  .content button {
+    padding: 1vw;
+    width: 30%;
+    border-radius: 5px;
+    border: none;
+    background: greenyellow;
+    font-weight: bold;
+    color: blue;
+    margin-top: 5vh;
+    margin-left: .3vw;
+    cursor: pointer;
+  }
+  
+  /* end home  */
+  
+  /* Contact Us  */
+  
+  .contact {
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .CI {
+    margin-top: 2vw;
+    font-size: 3vh;
+    font-weight: 1000;
+    text-align: center;
+  }
+  
+  .CIBox {
+    font-size: 2vh;
+    height: 29vh;
+    width: 29vh;
+    background-color: #8b4513;
+    border-radius: 12px;
+    color: #fff;
+    margin-left: 2vw;
+    font-weight: bold;
+    padding: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
+  
+  .call {
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+  }
+  
+  .CIFLEXBOX {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vw;
+    padding-left: 4vw;
+    flex-wrap: wrap;
+  }
+  
+  .image-slider {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    overflow: hidden;
+  }
+  
+  .image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .slider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: zoom 20s infinite ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes zoom {
+  
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  
+    20%,
+    80% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .overlay-text h2 {
+    color: white;
+    font-size: 3vh;
+    text-align: center;
+  }
+  
+  .slider-image:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .slider-image:nth-child(2) {
+    animation-delay: 6.5s;
+  }
+  
+  .slider-image:nth-child(3) {
+    animation-delay: 13s;
+  }
+  
+  /* end Contact Us  */
+  
+  /* tour  */
+  .visitplace {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100vw;
+    padding: 2vw;
+    background: aquamarine;
+    gap: 5vw;
+  }
+  
+  .data {
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* flex-direction: row; */
+    gap: 10%;
+  }
+  
+  .data button {
+    width: 100%;
+    height: 5vh;
+    padding: 1vh;
+    cursor: pointer;
+    /* margin-left: 70%; */
+  }
+  
+  .img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .img img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .placeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  /* end tour  */
+  
+  /* about us  */
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #8b4513;
+    color: #fff;
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .header p {
+    font-size: .7rem;
+  }
+  
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+  }
+  
+  .about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+  }
+  
+  .about-content {
+    max-width: 800px;
+    margin-top: 1.5rem;
+    text-align: left;
+  }
+  
+  .about-content h2 {
+    font-size: 1.8rem;
+    margin: 1rem 0 0.5rem;
+    color: #8b4513;
+  }
+  
+  .about-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .about-content ul {
+    list-style-type: disc;
+    margin: 1rem 0 1rem 2rem;
+  }
+  
+  #staff {
+    cursor: pointer;
+  }
+  
+  #staff:hover {
+    text-decoration: underline;
+    color: blue;
+  }
+  
+  #staffuse {
+    display: none;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+  }
+  
+  .line {
+    background: #000;
+    width: 15px;
+    height: 80vh;
+    margin-left: 80%;
+  }
+  
+  .staffuse {
+    width: 100vw;
+    padding: 30px;
+    padding-left: 25px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .staffuse div {
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+  }
+  
+  .staffuse h2 {
+    text-align: center;
+    color: yellowgreen;
+  }
+  
+  .staffuse h4:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  
+  /* Animation for Falling Effect */
+  @keyframes dropDown {
+    0% {
+      transform: translate(0%, -500%);
+      opacity: 0;
+    }
+  
+    60% {
+      transform: translate(0%, 30%);
+      opacity: 1;
+    }
+  
+    80% {
+      transform: translate(0%, 20%);
+    }
+  
+    100% {
+      transform: translate(0%, 0);
+    }
+  }
+  
+  #staffuse.animate {
+    animation: dropDown 1s ease-out;
+    display: block;
+  }
+  
+  #Admin {
+    display: none;
+    top: 30%;
+    left: 0%;
+    position: fixed;
+    
+  }
+  
+  #Admin.adminanimate {
+    animation: dropDown 1s ease-out;
+    display: block;
+  }
+  #Manager {
+    display: none;
+    top: 30%;
+    left: 0%;
+    position: fixed;
+    
+  }
+  
+  #Manager.adminanimate {
+    animation: dropDown 1s ease-out;
+    display: block;
+  }
+  
+  #Guide {
+    display: none;
+    top: 30%;
+    left: 0%;
+    position: fixed;
+    
+  }
+  
+  #Guide.adminanimate {
+    animation: dropDown 1s ease-out;
+    display: block;
+  }
+  
+  @keyframes dropDown {
+    0% {
+      transform: translate(0%, -500%);
+      opacity: 0;
+    }
+  
+    60% {
+      transform: translate(0%, 30%);
+      opacity: 1;
+    }
+  
+    80% {
+      transform: translate(0%, 20%);
+    }
+  
+    100% {
+      transform: translate(0%, 0);
+    }
+  }
+  
+  /* end about us  */
+  
+  /* place page  */
+  
+  .placemain {
+    position: relative;
+  }
+  
+  .guide {
+    position: fixed;
+    /* background: rosybrown; */
+    display: flex;
+    padding: 3vh 2vw;
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: 1px 1px 1px 1px rgb(117, 116, 116);
+    background: #ffffff;
+    align-items: center;
+  }
+  
+  .guide button {
+    padding: 2vh 1vw;
+    border-radius: 50px;
+    width: 30%;
+    background: pink;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .guide button:hover {
+    background: rgb(244, 183, 193);
+  }
+  
+  .guide span {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .guide p {
+    font-weight: 600;
+  }
+  
+  .placedatadiv {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 15vh 0.5vw 2vh;
+    gap: 2vh;
+    background: #fff;
+  }
+  
+  .placedatadiv img {
+    width: 100%;
+    max-width: 100vw;
+    border-radius: 8px;
+  }
+  
+  .placedatadiv h1 {
+    font-weight: 800;
+    font-size: 30px;
+  }
+  
+  
+  /* end place page  */
+  
+  /* guideBooking */
+  .guidebooking {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign-in-box {
+    width: 100vw;
+    padding: 20px;
+    padding-left: 25px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    /* display: none; */
+  }
+  
+  .sign-in-box h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sign-in-box label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .sign-in-box input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .sign-in-box button {
+    padding: 10px 20px;
+    font-weight: 600;
+    width: 100%;
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .close-signin {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: red;
+  }
+  
+  .fillbl {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  
+  
+  /* end guideBooking  */
+  
+  /* admin panel */
+  
+  .adminpanel {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    margin-top: 5vh;
+    /* justify-content: center; */
+  }
+  
+  
+  .avstock {
+    margin-left: 0%;
+  }
+  
+  .tabled {
+    width: 100vw;
+    padding-left: 0%;
+    text-align: center;
+    height: 30vh;
+    overflow-y: scroll;
+    font-weight: lighter;
+  
+  }
+  
+  .sotable {
+    width: 100%;
+    box-shadow: rgb(216, 206, 206) 0.1vh 0.5vh;
+    /* height: 30vh; */
+  
+  }
+  
+  .table-data,
+  .table-head {
+    padding: 1.5%;
+    border-bottom: #e6dfdf solid 0.1vh;
+  
+  }
+  
+  .table-action {
+    display: flex;
+    justify-content: center;
+    padding: 50% 0;
+    gap: 20%;
+    border-bottom: #e6dfdf solid 0.1vh;
+  
+  }
+  
+  .table-row:hover {
+    background: rgb(247, 239, 239);
+  }
+  
+  .table-th {
+    background-color: coral;
+    color: white;
+  }
+  
+  
+  .allitems {
+    /* margin-left: 15vw; */
+    margin-top: 5vh;
+  }
+  
+  .bcbtn{
+    padding: 10px 25px;
+    border-radius: 12px;
+    background: silver;
+    border: none;
+  }
+  
+  /* end admin panel */
+  
+  /* adminpanel/manager  */
+  
+  .managerinfo {
+    background: aquamarine;
+    display: flex;
+    flex-direction: column;
+    /* height: 10vh; */
+    position: fixed;
+    padding: 1vh;
+    align-items: center;
+    border-radius: 12px;
+    margin-top: 0;
+    right: 0%;
+    margin-right: 0vw;
+    top: 0%;
+    width: 100%;
+  }
+  
+  .managerinfo img {
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%;
+  }
+  
+  .managerinfo .other {
+    text-align: left;
+  }
+  .workinfo{
+    margin-top: 30vh;
+    width: 100vw;
+  }
+  
+  /* end adminpanel/manager  */
+  
+  /* managerpanel */
+  
+  .mainmangerpanel .profile {
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1vw;
+  }
+  
+  .mainmangerpanel .profile img {
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
+  }
+  
+  .mainmangerpanel .branchwork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 11vh;
+  }
+  
+  /* end manager panel */
+  
+  /* managerpanel/employee  */
+  
+  .workinfo .asworkbtn {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .aswork {
+    background: #ddd;
+    padding: 2vh;
+    border-radius: 12px;
+    font-weight: 600;
+    color: navy;
+    border: none;
+  }
+  
+  /* end managerpanel/emplyee */
+  
+  /* workassign */
+  
+  .asgn {
+    padding: 1vh 2vh;
+    background: #ddd;
+    font-weight: 600;
+    border-radius: 12px;
+    margin-top: 5vh;
+    margin-right: 12vw;
+    border: none;
+    color: navy;
+  }
+  
+  /* end work assign  */
+  
+  /* guide */
+  
+  #complete {
+    color: green;
+    cursor: pointer;
+  }
+  
+  #complete:hover {
+    text-decoration: underline;
+  }
+  
+  /* end guide  */
+  
+  /* completeWork  */
+  
+  .completedwork {
+    background: rosybrown;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    margin: 0;
+    left: 0%;
+    top: 10%;
+    width: 100vw;
+    font-size: large;
+  }
+  
+  .completedwork input {
+    width: 100%;
+    height: 5vh;
+    font-size: large;
+  }
+  
+  .completedwork button {
+    padding: 1vh;
+  }
+  
+  /* end CompleteWork */
+}
