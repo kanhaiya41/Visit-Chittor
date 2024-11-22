@@ -8,7 +8,7 @@ import jwt from 'jsonwebtoken';
 export const AppointManager = async (req, res) => {
     try {
         const { Username, email, mobile, code, branch, address } = req.body;
-        const profile_pic = `${process.env.BACKEND_URL}/file/${req.file.originalname}`;
+        const profile_pic = `https://visit-chittor.onrender.com/file/${req.file.originalname}`;
 
         const user = await Manager.findOne({ email });
         const existCode = await Manager.findOne({ code });

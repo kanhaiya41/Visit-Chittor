@@ -8,7 +8,7 @@ import jwt from 'jsonwebtoken';
 export const appointGuide = async (req, res) => {
     try {
         const { Username, email, mobile, code, mCode, branch, address } = req.body;
-        const profile_pic = `${process.env.BACKEND_URL}/file/${req.file.originalname}`;
+        const profile_pic = `https://visit-chittor.onrender.com/file/${req.file.originalname}`;
 
         const user = await Guide.findOne({ email });
         const existcode = await Guide.findOne({ code });
