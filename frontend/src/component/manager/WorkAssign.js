@@ -37,8 +37,11 @@ const WorkAssign = () => {
         ])
     }
 
+    const [managerLoading, setManagerLoading] = useState(false);
+
     const assignNow = async () => {
         try {
+            setManagerLoading(true);
             const res = await axios.post(`${URL}/manager/assignWork`, { ids, guide: selected?.Username });
             if (res?.data?.success) {
                 toast.success(res?.data?.message);
@@ -50,6 +53,9 @@ const WorkAssign = () => {
         } catch (error) {
             console.log("while assigning work", error);
             toast.error('error');
+        }
+        finally {
+            setManagerLoading(false);
         }
     }
 
@@ -98,7 +104,13 @@ const WorkAssign = () => {
                             }
                         </tbody>
                     </table>
+                    {
+                                managerLoading ? <button>
+                                    <img src="/img/loader.png" className='Loader' alt="loader" />
+                                </button>
+                                    :
                     <button className='asgn' onClick={assignNow}>Assign</button>
+}
                     <button className='asgn' onClick={() => navigate('/employee-info')}>Back</button>
                 </div>
             </div>

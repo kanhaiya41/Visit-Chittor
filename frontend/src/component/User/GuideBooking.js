@@ -27,14 +27,17 @@ const GuideBooking = () => {
     })
   };
 
+  const [managerLoading, setManagerLoading] = useState(false);
+
   const Book = async (e) => {
     e.preventDefault();
     try {
+      setManagerLoading(true);
       const res = await axios.post(`${URL}/customer/booking`, input, {
         headers: {
           'Content-Type': 'application/json'
         },
-        
+
       });
       if (res.data.success) {
         toast.success(res.data.message);
@@ -45,6 +48,9 @@ const GuideBooking = () => {
       }
     } catch (error) {
       console.log('while book guide', error);
+    }
+    finally {
+      setManagerLoading(false);
     }
   }
 
@@ -76,15 +82,15 @@ const GuideBooking = () => {
           <label htmlFor=""> Booking Date </label>
           <input type="date" required name='Booking_Date' onChange={changeEventHandler} value={input.Booking_Date} />
 
-          {/* {
-            loading ? <button>
+          {
+            managerLoading ? <button>
               <img src="/img/loader.png" className='Loader' alt="loader" />
             </button>
-              : */}
-          <button type="submit"
-            onClick={Book}
-          >Book Now</button>
-          {/* } */}
+              :
+              <button type="submit"
+                onClick={Book}
+              >Book Now</button>
+          }
         </form>
 
       </div>

@@ -39,9 +39,13 @@ const ManagerPanel = () => {
         });
     }
 
+    const [managerLoading, setManagerLoading] = useState(false);
+    const [deleteLoading, setDeleteLoading] = useState(false);
+
     const appointGuide = async (e) => {
         e.preventDefault();
         try {
+            setManagerLoading(true);
             const formData = new FormData();
             formData.append('Username', input.Username);
             formData.append('email', input.email);
@@ -65,6 +69,9 @@ const ManagerPanel = () => {
         } catch (error) {
             console.log("while appointing a guide", error);
             toast.error('error');
+        }
+        finally {
+            setManagerLoading(false);
         }
     }
 
@@ -118,12 +125,16 @@ const ManagerPanel = () => {
 
     const deleteManager = async (id) => {
         try {
+            setDeleteLoading(true);
             const res = await axios.delete(`${URL}/manager/deleteGuide/${id}`);
             if (res?.data?.success) {
                 toast.success(res?.data?.message);
             }
         } catch (error) {
             console.log("while delete manager", error);
+        }
+        finally {
+            setDeleteLoading(false);
         }
     }
 
@@ -184,15 +195,15 @@ const ManagerPanel = () => {
                             <label className='fillbl' htmlFor="file">
                                 {image ? image?.name : 'choose from device...'}
                             </label>
-                            {/* {
-            loading ? <button>
-              <img src="/img/loader.png" className='Loader' alt="loader" />
-            </button>
-              : */}
-                            <button type="submit"
-                                onClick={appointGuide}
-                            >Appoint Now</button>
-                            {/* } */}
+                            {
+                                managerLoading ? <button>
+                                    <img src="/img/loader.png" className='Loader' alt="loader" />
+                                </button>
+                                    :
+                                    <button type="submit"
+                                        onClick={appointGuide}
+                                    >Appoint Now</button>
+                            }
                         </form>
 
                     </div>
@@ -236,7 +247,13 @@ const ManagerPanel = () => {
                                                     onClick={() => employeInfo(curElem)}
                                                 >{curElem?.email}</td>
                                                 <td className='table-action'>
-                                                    <FontAwesomeIcon icon={faTrash} onClick={() => deleteManager(curElem._id)} style={{ color: 'red', cursor: 'pointer' }} />
+                                                    {
+                                                        deleteLoading ?
+                                                            <button>
+                                                                <img src="/img/loader.png" className='Loader' alt="loader" />
+                                                            </button> :
+                                                            <FontAwesomeIcon icon={faTrash} onClick={() => deleteManager(curElem._id)} style={{ color: 'red', cursor: 'pointer' }} />
+                                                    }
                                                 </td>
                                             </tr>
                                         ))
@@ -389,7 +406,7 @@ const ManagerPanel = () => {
                             </table>
                         </div>
                     </div>
-                    <button className='asgn' onClick={()=>navigate('/about')} >Back</button> <br /> <br />
+                    <button className='asgn' onClick={() => navigate('/about')} >Back</button> <br /> <br />
                 </div>
             </div>
         </>

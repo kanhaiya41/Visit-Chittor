@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import URL from '../../utills/utills'
 
 const CompleteWork = () => {
 
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
     const { user } = useSelector(store => store.user);
     const [input, setInput] = useState({
@@ -27,8 +27,11 @@ const CompleteWork = () => {
         });
     }
 
+    const [managerLoading, setManagerLoading] = useState(false);
+
     const workDone = async () => {
         try {
+            setManagerLoading(true);
             const res = await axios.post(`${URL}/customer/complete`, input, {
                 headers: {
                     'Content-Type': 'application/json'
@@ -42,6 +45,9 @@ const CompleteWork = () => {
             console.log("while completing the work", error)
             toast.error('errro');
         }
+        finally {
+            setManagerLoading(false);
+        }
     }
 
     return (
@@ -53,8 +59,14 @@ const CompleteWork = () => {
                 Email: <input type="text" name='customerEmail' value={input.customerEmail} onChange={inputChange} /><br />
                 People : <input type="text" name='people' value={input.people} onChange={inputChange} /><br />
                 Guide Code : <input type="text" name='code' value={input.code} onChange={inputChange} /><br />
-                <button onClick={workDone}>Done</button>
-            </div>
+                {
+                    managerLoading ? <button>
+                        < img src="/img/loader.png" className='Loader' alt="loader" />
+                    </button>
+                        : <button onClick={workDone}>Done</button>
+
+                }
+            </div >
         </>
 
     )

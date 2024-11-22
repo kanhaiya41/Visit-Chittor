@@ -85,9 +85,12 @@ const About = () => {
     })
   };
 
+  const [managerLoading, setManagerLoading] = useState(false);
+
   const adminSignIn = async (e) => {
     e.preventDefault();
     try {
+      setManagerLoading(true);
       const res = await axios.post(`${URL}/admin/login`, admin, {
         headers: {
           'Content-Type': 'application/json'
@@ -105,11 +108,15 @@ const About = () => {
       console.log("while admin sign in", error);
       toast.error('error');
     }
+    finally {
+      setManagerLoading(false);
+  }
   }
 
   const managerSignIn = async (e) => {
     e.preventDefault();
     try {
+      setManagerLoading(true);
       const res = await axios.post(`${URL}/admin/managerlogin`, manager, {
         headers: {
           'Content-Type': 'application/json'
@@ -127,11 +134,15 @@ const About = () => {
       console.log("while manager sign in", error);
       toast.error('error');
     }
+    finally {
+      setManagerLoading(false);
+  }
   }
 
   const guideSignIn = async (e) => {
     e.preventDefault();
     try {
+      setManagerLoading(true);
       const res = await axios.post(`${URL}/manager/guidelogin`, guide, {
         headers: {
           'Content-Type': 'application/json'
@@ -149,6 +160,9 @@ const About = () => {
       console.log("while guide sign in", error);
       toast.error('error');
     }
+    finally {
+      setManagerLoading(false);
+  }
   }
 
   return (
@@ -223,16 +237,15 @@ const About = () => {
           />
 
           <div className="pswrds">
-            {/* {
-                loading ? <button>
-                  <img src="/img/loader.png" className='Loader' alt="loader" />
-                </button>
-                  : */}
-            <button type="submit"
-              onClick={adminSignIn}
-            >Sign In</button>
-
-            {/* // } */}
+            {
+              managerLoading ? <button>
+                <img src="/img/loader.png" className='Loader' alt="loader" />
+              </button>
+                :
+                <button type="submit"
+                  onClick={adminSignIn}
+                >Sign In</button>
+            }
 
           </div>
         </form>
@@ -261,16 +274,16 @@ const About = () => {
           />
 
           <div className="pswrds">
-            {/* {
-                loading ? <button>
-                  <img src="/img/loader.png" className='Loader' alt="loader" />
-                </button>
-                  : */}
-            <button type="submit"
-              onClick={guideSignIn}
-            >Sign In</button>
+            {
+              managerLoading ? <button>
+                <img src="/img/loader.png" className='Loader' alt="loader" />
+              </button>
+                :
+                <button type="submit"
+                  onClick={guideSignIn}
+                >Sign In</button>
 
-            {/* // } */}
+            }
 
           </div>
         </form>
@@ -299,16 +312,16 @@ const About = () => {
           />
 
           <div className="pswrds">
-            {/* {
-                loading ? <button>
-                  <img src="/img/loader.png" className='Loader' alt="loader" />
-                </button>
-                  : */}
-            <button type="submit"
-              onClick={managerSignIn}
-            >Sign In</button>
+            {
+              managerLoading ? <button>
+                <img src="/img/loader.png" className='Loader' alt="loader" />
+              </button>
+                :
+                <button type="submit"
+                  onClick={managerSignIn}
+                >Sign In</button>
 
-            {/* // } */}
+            }
 
           </div>
         </form>
